@@ -1,21 +1,17 @@
 <?php
 
 // Append an object to a JSONL file
-function appendObjectToJSONL($filename, $object) {
+function appendObject($filename, $object) {
     $file = fopen($filename, "a");
     fwrite($file, json_encode($object) . EOL);
     fclose($file);
 }
 
-// Search for a specific object in the JSONL file
-function searchObjectInJSONL($filename, $searchKey, $searchValue) {
-    $file = fopen($filename, "r");
-    while ($line = fgets($file)) {
-        $object = json_decode($line);
-        if ($object->$searchKey == $searchValue) {
-            fclose($file);
-            return $object;
-        }
-    }
-    fclose($file);
-    return null; // Object
+
+// Example objects
+$person1 = (object) array("name" => "John Doe", "age" => 30, "occupation" => "Engineer");
+$person2 = (object) array("name" => "Jane Smith", "age" => 25, "occupation" => "Designer");
+
+// Append objects to the file
+appendObject("data.ndof", $person1);
+appendObject("data.ndof", $person2);
