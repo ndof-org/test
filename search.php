@@ -1,7 +1,7 @@
 <?php
 
 // Search for a word in the JSONL file without decoding
-function searchWordInJSONL($filename, $searchWord) {
+function searchWord($filename, $searchWord) {
     $file = fopen($filename, "r");
     while ($line = fgets($file)) {
         if (strpos($line, $searchWord) !== false) {
@@ -17,7 +17,7 @@ function searchWordInJSONL($filename, $searchWord) {
 
 // Search for a specific word in the JSONL file
 $searchWord = "Vegas";
-$result = searchWordInJSONL("data.ndof", $searchWord);
+$result = searchWord("data.ndof", $searchWord);
 if ($result) {
     echo "Found: " . $result;
 } else {
