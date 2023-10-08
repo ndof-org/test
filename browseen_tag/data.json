@@ -1,0 +1,21 @@
+[
+  {
+    "url": "https://example.com",
+    "description": "This is an example description",
+    "tags": [
+      "example",
+      "test"
+    ],
+    "screenshot": "1.png"
+  },
+  {
+    "url": "https://browseen.com",
+    "description": "This is an browseen description",
+    "tags": [
+      "browseen",
+      "browseek",
+      "test"
+    ],
+    "screenshot": "2.png"
+  }
+]

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Engine</title>
+    <script>
+        function search() {
+            var query = document.getElementById('query').value;
+            var request = new XMLHttpRequest();
+            request.open('POST', 'query.php', true);
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            request.send('query=' + encodeURIComponent(query));
+
+            request.onload = function () {
+                if (request.status >= 200 && request.status < 400) {
+                    var resp = JSON.parse(request.responseText);
+                    document.getElementById('results').innerHTML = resp.results.join('<br>');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<form onsubmit="event.preventDefault(); search();">
+    <input id="query" type="text" placeholder="Enter search term..." required>
+    <input type="submit" value="Search">
+</form>
+
+<div id="results"></div>
+</body>
+</html>

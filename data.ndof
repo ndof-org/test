@@ -1,0 +1,5 @@
+{"name": "John", "age": 30, "city": "New York"}
+<Person><name>Jane</name><age>35</age><city>Chicago</city></Person>
+{"name": "Jane", "age": 35, "city": "Chicago"}
+<Person><name>John</name><age>30</age><city>New York</city></Person>
+<div><h1>Bob</h1><p>Age: 40</p><p>City: Los Angeles</p></div>
